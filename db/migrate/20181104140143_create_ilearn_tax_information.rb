@@ -11,8 +11,6 @@ class CreateIlearnTaxInformation < ActiveRecord::Migration[5.2]
       t.integer :statewide_ttr_rank
       t.integer :operating_tax_rate
       t.integer :statewide_otr_rank
-
-      t.references :ilearn_district, foreign_key: true
     end
   end
 end
