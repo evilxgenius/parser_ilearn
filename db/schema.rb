@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2018_11_04_140143) do
   enable_extension "plpgsql"
 
   create_table "ilearn_districts", force: :cascade do |t|
-    t.integer "district_number"
+    t.bigint "district_number"
     t.string "district_name"
     t.string "superintendent"
     t.string "address"
@@ -24,12 +24,10 @@ ActiveRecord::Schema.define(version: 2018_11_04_140143) do
     t.string "district_type"
     t.string "data_source_url"
     t.string "scrape_dev"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "ilearn_expenditures_disbursements", force: :cascade do |t|
-    t.integer "district_number"
+    t.bigint "district_number"
     t.string "district_name"
     t.integer "instruction_amount"
     t.integer "general_administration_amount"
@@ -38,14 +36,12 @@ ActiveRecord::Schema.define(version: 2018_11_04_140143) do
     t.integer "total_amount"
     t.string "data_source_url"
     t.string "scrape_dev"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.bigint "ilearn_districts_id"
     t.index ["ilearn_districts_id"], name: "index_ilearn_expenditures_disbursements_on_ilearn_districts_id"
   end
 
   create_table "ilearn_per_student_info", force: :cascade do |t|
-    t.integer "district_number"
+    t.bigint "district_number"
     t.string "district_name"
     t.integer "9-Month Avg. Daily Attendance"
     t.integer "Statewide ADA"
@@ -59,14 +55,12 @@ ActiveRecord::Schema.define(version: 2018_11_04_140143) do
     t.integer "Statewide PCTC"
     t.string "data_source_url"
     t.string "scrape_dev"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.bigint "ilearn_districts_id"
     t.index ["ilearn_districts_id"], name: "index_ilearn_per_student_info_on_ilearn_districts_id"
   end
 
   create_table "ilearn_receits_revenues", force: :cascade do |t|
-    t.integer "district_number"
+    t.bigint "district_number"
     t.string "district_name"
     t.integer "state_amount"
     t.integer "local_amount"
@@ -74,14 +68,12 @@ ActiveRecord::Schema.define(version: 2018_11_04_140143) do
     t.integer "total_amount"
     t.string "data_source_url"
     t.string "scrape_dev"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.bigint "ilearn_districts_id"
     t.index ["ilearn_districts_id"], name: "index_ilearn_receits_revenues_on_ilearn_districts_id"
   end
 
   create_table "ilearn_tax_information", force: :cascade do |t|
-    t.integer "district_number"
+    t.bigint "district_number"
     t.string "district_name"
     t.integer "real_eav"
     t.integer "real_per_pupil"
@@ -91,8 +83,6 @@ ActiveRecord::Schema.define(version: 2018_11_04_140143) do
     t.integer "statewide_ttr_rank"
     t.integer "operating_tax_rate"
     t.integer "statewide_otr_rank"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.bigint "ilearn_district_id"
     t.index ["ilearn_district_id"], name: "index_ilearn_tax_information_on_ilearn_district_id"
   end

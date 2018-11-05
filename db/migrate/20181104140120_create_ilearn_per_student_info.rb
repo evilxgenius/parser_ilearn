@@ -1,7 +1,7 @@
 class CreateIlearnPerStudentInfo < ActiveRecord::Migration[5.2]
   def change
     create_table :ilearn_per_student_info do |t|
-      t.integer :district_number
+      t.bigint :district_number
       t.string :district_name
       t.integer '9-Month Avg. Daily Attendance'
       t.integer 'Statewide ADA'
@@ -16,7 +16,6 @@ class CreateIlearnPerStudentInfo < ActiveRecord::Migration[5.2]
       t.string :data_source_url
       t.string :scrape_dev
 
-      t.timestamps
       t.references :ilearn_districts, foreign_key: true
     end
   end
