@@ -82,7 +82,7 @@ task :parse => :environment do
             \"Operating Expance Per Pupil (OEPP)\", \"Statewide OEPP Rank\", \"Statewide OEPP\",
             \"Allowance for Tuition Computation\", \"Per Capita Tuition Charge (PCTC)\",
             \"Statewide PCTC Rank\", \"Statewide PCTC\", data_source_url, scrape_dev, ilearn_districts_id)
-            VALUES (#{district_number}, '#{district_number}', #{eight_month}, #{statewide_ada},
+            VALUES (#{district_number}, '#{district_name}', #{eight_month}, #{statewide_ada},
             #{net_operating}, #{operating_expance}, #{statewide_oepp_rank}, #{statewide_oepp}, #{allowance},
             #{per_capita}, #{statewide_pctc_rank}, #{statewide_pctc}, '#{data_source_url}', '#{scrape_dev}',
             #{ilearn_district_id});"
