@@ -4,13 +4,13 @@ development:
   encoding: utf8
   host: localhost
   port: 5432
-  username: linuxlite
-  password: 123456
+  username: developer
+  password: Ev1lxg3n1us
 test:
   adapter: postgresql
   database: ILearn_test
   encoding: utf8
   host: localhost
   port: 5432
-  username: linuxlite
-  password: 123456
+  username: developer
+  password: Ev1lxg3n1us
