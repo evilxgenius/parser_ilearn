@@ -3,7 +3,7 @@ require 'mechanize'
 
 ActiveRecordMigrations.load_tasks
 
-desc "Parse"
+desc 'Parse'
 task :parse => :environment do
   agent = Mechanize.new
 
@@ -28,12 +28,12 @@ task :parse => :environment do
       phone = info[2].text[/:.*$/].delete_prefix(': ')
       district_type = info[3].text[/:.*$/].delete_prefix(': ')
       data_source_url = tables.uri
-      scrape_dev = 'ce'
+      scrape_dev = 'evilx'
 
       sql = "INSERT INTO ilearn_districts (district_number, district_name,
-      superintendent, address, phone, district_type, data_source_url, scrape_dev)
-      VALUES (#{district_number}, '#{district_name}', '#{superintendent}', '#{address}',
-      '#{phone}', '#{district_type}', '#{data_source_url}', '#{scrape_dev}');"
+            superintendent, address, phone, district_type, data_source_url, scrape_dev)
+            VALUES (#{district_number}, '#{district_name}', '#{superintendent}', '#{address}',
+            '#{phone}', '#{district_type}', '#{data_source_url}', '#{scrape_dev}');"
       exec_sql(sql)
 
       info = tables.search('td')
@@ -49,7 +49,7 @@ task :parse => :environment do
              state_amount, local_amount, federal_amount, total_amount, data_source_url,
              scrape_dev, ilearn_districts_id) VALUES (#{district_number}, '#{district_name}',
              #{state_amount}, #{local_amount}, #{federal_amount}, #{total_amount_receint}, '#{data_source_url}',
-             '#{scrape_dev}', #{ilearn_district_id} );"
+             '#{scrape_dev}', #{ilearn_district_id});"
       exec_sql(sql)
 
       instruction_amount = init(info[17])
@@ -88,7 +88,7 @@ task :parse => :environment do
             #{ilearn_district_id});"
       exec_sql(sql)
 
-      real_eav= init(info[59])
+      real_eav = init(info[59])
       real_per_pupil = init(info[61])
       statewide_eavpp_rank = init(info[63])
       formula_type = info[65].text
