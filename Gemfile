@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
 
 gem 'active_record_migrations'
-gem 'pg'
+gem 'mysql2'
 gem 'mechanize'

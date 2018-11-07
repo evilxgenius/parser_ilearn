@@ -1,16 +1,8 @@
 development:
-  adapter: postgresql
+  adapter: mysql2
   database: ILearn_development
   encoding: utf8
   host: localhost
   port: 5432
   username: developer
-  password: Ev1lxg3n1us
-test:
-  adapter: postgresql
-  database: ILearn_test
-  encoding: utf8
-  host: localhost
-  port: 5432
-  username: developer
-  password: Ev1lxg3n1us
+  password: Ev1lxg3n1us*

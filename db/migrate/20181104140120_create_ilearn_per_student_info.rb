@@ -1,18 +1,18 @@
 class CreateIlearnPerStudentInfo < ActiveRecord::Migration[5.2]
   def change
     create_table :ilearn_per_student_info do |t|
-      t.bigint :district_number
+      t.string :district_number
       t.string :district_name
-      t.bigint '9-Month Avg. Daily Attendance'
-      t.bigint 'Statewide ADA'
-      t.bigint 'Net Operating Expanse'
-      t.bigint 'Operating Expance Per Pupil (OEPP)'
-      t.integer 'Statewide OEPP Rank'
-      t.bigint 'Statewide OEPP'
-      t.bigint 'Allowance for Tuition Computation'
-      t.bigint 'Per Capita Tuition Charge (PCTC)'
-      t.integer 'Statewide PCTC Rank'
-      t.bigint 'Statewide PCTC'
+      t.float  :eigth_month_avg_daily_Attendance
+      t.float :statewide_ADA
+      t.bigint :net_perating_xpanse
+      t.bigint :operating_expance_per_pupil_OEPP
+      t.integer :statewide_OEPP_rank
+      t.bigint :statewide_OEPP
+      t.bigint :allowance_for_tuition_computation
+      t.bigint :per_capita_tuition_charge_PCTC
+      t.integer :Statewide_PCTC_rank
+      t.bigint :statewide_PCTC
       t.string :data_source_url
       t.string :scrape_dev
 
